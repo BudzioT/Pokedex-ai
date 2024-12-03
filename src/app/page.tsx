@@ -2,9 +2,21 @@
 import PokemonSearcher from "@/app/components/PokemonSeacher";
 import SurpriseButton from "@/app/components/SurpriseButton";
 import Sorter from "@/app/components/Sorter";
-import Pokemon from "@/app/components/Pokemon";
+import localFont from "next/font/local";
+import {PokemonFetcher} from "@/app/components/Fetchers";
+import {useState} from "react";
+
+const subFont = localFont({ src: "../../public/fonts/GeistMonoVF.woff" });
+
 
 export default function Home() {
+    let [firstIndex, setFirstIndex] = useState(1);
+    let [pokemonLimit, setPokemonLimit] = useState(12);
+
+    const pokemonList = [];
+    for (let i: number = firstIndex; i <= pokemonLimit; i++) {
+        pokemonList.push(<PokemonFetcher pokemonId={i} key={i} />);
+    }
 
     return (
         <main className="min-hscreen bg-container_bg">
@@ -16,16 +28,22 @@ export default function Home() {
 
                 <div className="px-8">
                     <div className="flex justify-center my-5">
-                        <SurpriseButton />
+                        <SurpriseButton/>
                     </div>
 
                     <div className="flex flex-col mb-10">
                         <p className="text-gray-400 text-lg my-1 font-bold">Sort By:</p>
-                        <Sorter />
+                        <Sorter/>
                     </div>
 
-                    <div className="flex-nowrap flex-row">
-                        <Pokemon id={0} name="Bulbasaur" types={["Grass", "Poison"]} image="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/detail/001.png"/>
+                    <div className="flex flex-nowrap flex-col gap-12">
+                        {pokemonList}
+                    </div>
+
+                    <div className="flex justify-center pt-10">
+                        <button className="bg-blue-400 w-full py-2 rounded-lg">
+                            <p className={`font-bold ${subFont.className}`}>Load more Pokémon</p>
+                        </button>
                     </div>
                 </div>
             </section>
