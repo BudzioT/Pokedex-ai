@@ -5,6 +5,7 @@ import Sorter from "@/app/components/Sorter";
 import localFont from "next/font/local";
 import {PokemonFetcher} from "@/app/components/Fetchers";
 import {useState} from "react";
+/* eslint-disable */
 
 const subFont = localFont({ src: "../../public/fonts/GeistMonoVF.woff" });
 

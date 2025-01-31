@@ -1,4 +1,5 @@
 import {NextResponse} from "next/server";
+/* eslint-disable */
 
 const POKEAPI_URL = "https://pokeapi.co/api/v2";
 

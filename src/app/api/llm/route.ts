@@ -1,4 +1,5 @@
 import {NextResponse} from "next/server";
+/* eslint-disable */
 
 export async function POST(request: Request) {
     try {

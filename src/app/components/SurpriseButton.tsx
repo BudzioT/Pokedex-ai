@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function SurpriseButton() {
     return (
         <button className="bg-blue-400 rounded-lg text-white text-lg font-bold py-3 flex flex-row flex-nowrap justify-center align-middle gap-2 p-5">

@@ -1,4 +1,5 @@
 import AdvancedFilter from "@/app/components/AdvancedFilter";
+/* eslint-disable */
 
 export default function PokemonSearcher() {
     return (

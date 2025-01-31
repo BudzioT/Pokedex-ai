@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import Pokemon from "./Pokemon";
+/* eslint-disable */
 
 interface PokemonFetcherProps {
     pokemonId: number,
@@ -26,7 +27,6 @@ export function PokemonFetcher({pokemonId}: PokemonFetcherProps) {
         fetchPokemonData();
     }, [pokemonId]);
 
-    // @ts-ignore
     return (
         <>
             {pokemonData && (

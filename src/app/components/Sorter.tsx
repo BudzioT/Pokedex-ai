@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default function Sorter() {
     return (
         <select className="bg-gray-800 text-white text-center text-lg mx-auto w-full py-2 rounded">

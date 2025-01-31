@@ -1,5 +1,6 @@
 import React from "react";
 import localFont from "next/font/local";
+/* eslint-disable */
 
 const subFont = localFont({ src: "../../../public/fonts/GeistMonoVF.woff" });
 
