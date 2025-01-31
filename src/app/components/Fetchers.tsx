@@ -6,8 +6,28 @@ interface PokemonFetcherProps {
     pokemonId: number,
 }
 
+interface PokemonType {
+    type: {
+        name: string;
+    };
+}
+
+interface PokemonSprites {
+    other: {
+        "official-artwork": {
+            front_default: string;
+        };
+    };
+}
+
+interface PokemonData {
+    name: string;
+    types: PokemonType[];
+    sprites: PokemonSprites;
+}
+
 export function PokemonFetcher({pokemonId}: PokemonFetcherProps) {
-    const [pokemonData, setPokemonData] = useState(null);
+    const [pokemonData, setPokemonData] = useState<PokemonData | null>(null);
     const [loading, setLoading] = useState(false);
 
     const fetchPokemonData = async() => {
